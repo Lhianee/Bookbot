@@ -1,5 +1,5 @@
 def get_book_text(dateipfad):
-    with open("/mnt/e/onedrive/02Python/Github/Repositories/Bookbot/books/frankenstein.txt", "r") as datei:
+    with open("E:\Onedrive\02Python\Github\Repositories\Bookbot\books\frankenstein.txt", "r") as datei:
         inhalt = datei.read()
         return inhalt
 def main():
