@@ -4,7 +4,7 @@ def get_book_text(dateipfad):
         return inhalt
 def main():
     import os
-    dateipfad = r"E:\Onedrive\02 Python\Github\Repositories\Bookbot\books\frankenstein.txt"    
+    dateipfad = r"E:\Onedrive\02Python\Github\Repositories\Bookbot\books\frankenstein.txt"    
     if os.path.exists(dateipfad):
         buch_inhalt = get_book_text(dateipfad)
         print(buch_inhalt)
