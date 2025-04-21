@@ -14,9 +14,7 @@ def get_book_text(dateipfad):
 
 # Funktion zur Zählung der Worte
 def count_words(dateipfad):
-    with open(dateipfad, encoding="utf-8") as datei:
-        inhalt = datei.read()
-        counted = len(inhalt.split())
+        counted = len(get_book_text(dateipfad).split())
         return counted 
         
 # Hauptfunktion: Text holen und ausgeben
