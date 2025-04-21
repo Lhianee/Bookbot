@@ -12,13 +12,23 @@ def get_book_text(dateipfad):
         inhalt = datei.read()
         return inhalt
 
+# Funktion zur Zählung der Worte
+def count_words(dateipfad):
+    with open(dateipfad, encoding="utf-8") as datei:
+        inhalt = datei.read()
+        counted = len(inhalt.split())
+        return counted 
+        
 # Hauptfunktion: Text holen und ausgeben
 def main():
     if os.path.exists(dateipfad):
         buch_inhalt = get_book_text(dateipfad)
         print(buch_inhalt)
+        counted_words = count_words(dateipfad)
+        print(f"Die Datei enthält {counted_words} Wörter.")
     else:
         print("Datei wurde nicht gefunden!")
 
 # Skript starten
 main()
+
