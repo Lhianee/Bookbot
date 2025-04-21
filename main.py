@@ -24,8 +24,8 @@ def main():
     if os.path.exists(dateipfad):
         buch_inhalt = get_book_text(dateipfad)
         print(buch_inhalt)
-        counted_words = count_words(dateipfad)
-        print(f"Die Datei enthält {counted_words} Wörter.")
+        num_words = count_words(dateipfad)
+        print(f"{num_words} words found in the document.")
     else:
         print("Datei wurde nicht gefunden!")
 
