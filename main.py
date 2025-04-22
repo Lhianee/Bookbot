@@ -15,11 +15,23 @@ def main():
     if os.path.exists(dateipfad):
         buch_inhalt = get_book_text(dateipfad)
         num_words = count_words(dateipfad)
-        print(f"{num_words} words found in the document.")
-        num_characters = count_characters(buch_inhalt) 
+        #print(f"{num_words} words found in the document.")
+        #num_characters = count_characters(buch_inhalt) 
         #print(num_characters)
-        result_list = sorted_characters(num_characters)
-        print(result_list)
+        print("============ BOOKBOT ============")
+        print("Analyzing book found at books/frankenstein.txt...")
+        print("----------- Word Count ----------")
+        print(f"Found {num_words} total words")
+
+        print("--------- Character Count -------")
+        char_count = count_characters(buch_inhalt)
+        sorted_chars = sorted_characters(char_count)
+
+        for char_dict in sorted_chars:
+            if char_dict["char"].isalpha():
+                print(f"{char_dict['char']}: {char_dict['count']}")
+        print("============= END ===============")
+
     else:
         print("Datei wurde nicht gefunden!")
 
