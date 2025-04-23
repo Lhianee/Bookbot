@@ -3,19 +3,15 @@ from stats import get_book_text, count_words, count_characters, sorted_character
 
 
 # Dynamischer Dateipfad je nach Umgebung
-#if os.name == "nt":  # Windows
-    #dateipfad = r"E:\Onedrive\02Python\Github\Repositories\Bookbot\books\frankenstein.txt"
-#else:  # Linux (WSL)
-    #dateipfad = "/mnt/e/Onedrive/02Python/Github/Repositories/Bookbot/books/frankenstein.txt"
+if os.name == "nt":  # Windows
+    dateipfad = r"E:\Onedrive\02Python\Github\Repositories\Bookbot\books\frankenstein.txt"
+else:  # Linux (WSL)
+    dateipfad = "/mnt/e/Onedrive/02Python/Github/Repositories/Bookbot/books/frankenstein.txt"
         
 # Hauptfunktion: Text holen und ausgeben
 def main():
     import sys
-    if len(sys.argv) < 2:
-        print("Usage: python3 main.py <path_to_book>")
-        sys.exit(1)
-    dateipfad = sys.argv[1]
-
+    print(sys.path)
     if os.path.exists(dateipfad):
         buch_inhalt = get_book_text(dateipfad)
         num_words = count_words(dateipfad)
